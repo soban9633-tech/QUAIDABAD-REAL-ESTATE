@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quaidabad Real Estate - Find a Place to Call Home</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="nexa-theme">
+
+  <!-- ==========================================================================
+       HERO SECTION: 100% Real Live Native HTML/CSS Architecture (Razor-Sharp Vector Clarity)
+       ========================================================================== -->
+  <section class="nexa-hero-outer">
+    <div class="nexa-hero-card">
+      <div class="nexa-hero-inner">
+        
+        <!-- Ultra-HD Clean Villa Canvas (Pure Sunset Villa Photo, Zero Baked-In Text) -->
+        <div class="nexa-hero-bg"></div>
+
+        <!-- Custom Framed Header Tabs -->
+        <header class="nexa-top-header">
+          
+          <!-- Left Corner Cutout: Brand Logo Tab -->
+          <div class="cutout-tab-left">
+            <a href="#" class="nexa-logo">
+              <svg class="nexa-logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 10.5L12 3l9 7.5V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+              <div class="logo-text-col">
+                <span class="brand-bold">QUAIDABAD</span>
+                <span class="brand-light">REAL ESTATE</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Center Floating Transparent Navigation -->
+          <nav class="nexa-center-nav" aria-label="Primary navigation">
+            <ul class="nexa-nav-links">
+              <li><a href="#properties" class="nav-anchor" onclick="filterByTab('buy', event)">Buy</a></li>
+              <li><a href="#properties" class="nav-anchor" onclick="filterByTab('rent', event)">Rent</a></li>
+              <li><a href="#properties" class="nav-anchor" onclick="filterByTab('plots', event)">Plots</a></li>
+              <li><a href="#properties" class="nav-anchor" onclick="filterByTab('commercial', event)">Commercial</a></li>
+              <li><a href="#about" class="nav-anchor">About Us</a></li>
+              <li><a href="#services" class="nav-anchor">Services</a></li>
+            </ul>
+          </nav>
+
+          <!-- Right Corner Cutout: Contact Us Button + Arrow -->
+          <div class="cutout-tab-right">
+            <div class="cutout-actions">
+              <button type="button" class="btn-contact-pill" onclick="openConsultationModal(this)">
+                <span>Contact Us</span>
+              </button>
+              <button type="button" class="btn-contact-arrow" onclick="openConsultationModal(this)" aria-label="Contact Us">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+              <button type="button" id="mobileToggle" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+        </header>
+
+        <!-- Mobile Navigation Drawer -->
+        <nav id="mobileNavDrawer" class="mobile-nav-drawer" aria-label="Mobile navigation" aria-hidden="true">
+          <ul class="mobile-nav-links">
+            <li><a href="#properties" onclick="filterByTab('buy', event); closeMobileMenu();">Buy Properties</a></li>
+            <li><a href="#properties" onclick="filterByTab('rent', event); closeMobileMenu();">Rent Properties</a></li>
+            <li><a href="#properties" onclick="filterByTab('plots', event); closeMobileMenu();">Residential Plots</a></li>
+            <li><a href="#properties" onclick="filterByTab('commercial', event); closeMobileMenu();">Commercial</a></li>
+            <li><a href="#about" onclick="closeMobileMenu()">About Us</a></li>
+            <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+          </ul>
+          <button type="button" class="btn-contact-pill mobile-nav-cta" onclick="closeMobileMenu(); openConsultationModal(this);">
+            <span>Book Free Consultation</span>
+          </button>
+        </nav>
+
+        <!-- Real Left-Aligned Hero Content (Vector Typography - 0% Raster Blur) -->
+        <div class="nexa-hero-content">
+          <span class="royal-eyebrow">MORE THAN PROPERTIES</span>
+          <h1 class="nexa-headline">
+            <span class="line-dark">Find a Place</span>
+            <span class="line-gold">to Call Home</span>
+          </h1>
+          <p class="nexa-subheadline">
+            Discover modern homes, premium locations and a lifestyle you deserve.
+          </p>
+
+          <a href="#properties" class="nexa-hero-cta-btn">
+            <span>Explore Properties</span>
+            <span class="cta-white-circle">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <!-- Real 3D Liquid Frosted Glass Search Bar (Docked at Bottom Edge - Razor Sharp) -->
+        <div class="hero-docked-search">
+          <div class="nexa-search-card">
+            
+            <!-- Interactive Tabs -->
+            <div class="search-tabs-row" id="searchTabs" role="tablist">
+              <button class="tab-pill active" data-tab="buy" role="tab" aria-selected="true" onclick="filterByTab('buy')">
+                <i class="fa-solid fa-house-chimney"></i> Buy
+              </button>
+              <button class="tab-pill" data-tab="rent" role="tab" aria-selected="false" onclick="filterByTab('rent')">
+                <i class="fa-solid fa-key"></i> Rent
+              </button>
+              <button class="tab-pill" data-tab="plots" role="tab" aria-selected="false" onclick="filterByTab('plots')">
+                <i class="fa-solid fa-vector-square"></i> Plots
+              </button>
+              <button class="tab-pill" data-tab="commercial" role="tab" aria-selected="false" onclick="filterByTab('commercial')">
+                <i class="fa-solid fa-building"></i> Commercial
+              </button>
+            </div>
+
+            <!-- Search Inputs Grid -->
+            <form id="searchForm" onsubmit="event.preventDefault(); handleSearch();">
+              <div class="search-inputs-grid">
+                
+                <div class="input-block">
+                  <label for="locationSelect">
+                    <i class="fa-solid fa-location-dot"></i> LOCATION / BLOCK
+                  </label>
+                  <div class="custom-select-wrap">
+                    <select id="locationSelect" name="location">
+                      <option value="" selected>All Locations / Blocks</option>
+                      <option value="housing-colony">Gulberg Housing Scheme</option>
+                      <option value="civil-lines">Civil Lines / Model Town</option>
+                      <option value="main-bazaar">Main Bazaar Commercial</option>
+                      <option value="railway-road">Railway Road Business Hub</option>
+                      <option value="sargodha-road">Sargodha Road Belt</option>
+                      <option value="mianwali-bypass">Mianwali Bypass Corridor</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="input-block">
+                  <label for="sizeSelect">
+                    <i class="fa-solid fa-ruler-combined"></i> PROPERTY SIZE
+                  </label>
+                  <div class="custom-select-wrap">
+                    <select id="sizeSelect" name="size">
+                      <option value="" selected>Any Size</option>
+                      <option value="5-marla">5 Marla</option>
+                      <option value="10-marla">10 Marla</option>
+                      <option value="1-kanal">1 Kanal</option>
+                      <option value="commercial-shop">Commercial Shop</option>
+                      <option value="commercial-plaza">Commercial Plaza / Floor</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="input-block">
+                  <label for="budgetSelect">
+                    <i class="fa-solid fa-wallet"></i> BUDGET RANGE (PKR)
+                  </label>
+                  <div class="custom-select-wrap">
+                    <select id="budgetSelect" name="budget">
+                      <option value="" selected>Any Budget</option>
+                      <option value="under-30-lacs">Under PKR 30 Lacs</option>
+                      <option value="30-60-lacs">PKR 30 Lacs - 60 Lacs</option>
+                      <option value="60-lacs-1-cr">PKR 60 Lacs - 1.2 Crore</option>
+                      <option value="1.2-2.5-cr">PKR 1.2 Crore - 2.5 Crore</option>
+                      <option value="2.5-cr-plus">PKR 2.5 Crore+</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <button type="submit" class="btn-search-submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Search Properties</span>
+                  </button>
+                </div>
+
+              </div>
+            </form>
+
+            <div id="searchNotification" class="search-notification"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 0: Exclusive Portfolio (4-Column Alternating Staggered Grid)
+       ========================================================================== -->
+  <section class="exclusive-portfolio-section" id="exclusive-portfolio">
+    <!-- Architectural Blueprint Line-Art Watermarks -->
+    <svg class="portfolio-blueprint blueprint-top-left" viewBox="0 0 320 260" fill="none" stroke="#B58A3D" stroke-width="1" aria-hidden="true">
+      <rect x="20" y="20" width="260" height="190" />
+      <line x1="120" y1="20" x2="120" y2="210" />
+      <line x1="20" y1="115" x2="280" y2="115" />
+      <line x1="200" y1="20" x2="200" y2="115" />
+      <rect x="38" y="38" width="64" height="58" stroke-dasharray="4 3" />
+      <path d="M120 75 A35 35 0 0 1 155 110" />
+      <path d="M165 115 A35 35 0 0 0 200 150" />
+      <rect x="138" y="135" width="124" height="58" />
+      <line x1="150" y1="145" x2="150" y2="183" />
+      <line x1="162" y1="145" x2="162" y2="183" />
+      <line x1="174" y1="145" x2="174" y2="183" />
+      <line x1="186" y1="145" x2="186" y2="183" />
+    </svg>
+    <svg class="portfolio-blueprint blueprint-top-right" viewBox="0 0 320 260" fill="none" stroke="#B58A3D" stroke-width="1" aria-hidden="true">
+      <rect x="30" y="24" width="250" height="196" />
+      <line x1="145" y1="24" x2="145" y2="220" />
+      <line x1="30" y1="128" x2="280" y2="128" />
+      <line x1="215" y1="128" x2="215" y2="220" />
+      <circle cx="88" cy="76" r="24" stroke-dasharray="3 3" />
+      <path d="M145 84 A36 36 0 0 1 181 120" />
+      <rect x="165" y="42" width="96" height="66" />
+      <line x1="48" y1="148" x2="125" y2="148" />
+      <line x1="48" y1="162" x2="125" y2="162" />
+      <line x1="48" y1="176" x2="125" y2="176" />
+    </svg>
+
+    <div class="container portfolio-container">
+      <div class="portfolio-header text-center">
+        <div class="portfolio-eyebrow-wrap">
+          <span class="portfolio-eyebrow">EXCLUSIVE PORTFOLIO</span>
+        </div>
+        <h2 class="portfolio-heading">
+          <span>THE PINNACLE OF LIVING</span>
+          <span>MODERN SANCTUARY</span>
+        </h2>
+        <a href="#properties" class="btn-view-projects">
+          <span>VIEW ALL PROJECTS</span>
+          <span class="btn-gold-badge" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="portfolio-staggered-grid">
+        <!-- Column 1: Image Top, Text Bottom -->
+        <article class="portfolio-item portfolio-item-odd">
+          <div class="portfolio-image-wrap">
+            <div class="portfolio-image-clip">
+              <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800&auto=format&fit=crop" alt="10 Marla Designer Villas in Gulberg, Quaidabad" class="portfolio-img" loading="lazy">
+            </div>
+            <div class="portfolio-price-pill">
+              <span>PKR 2.40 Crore</span>
+            </div>
+          </div>
+          <div class="portfolio-meta">
+            <div class="portfolio-location">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>GULBERG, QUAIDABAD</span>
+            </div>
+            <h3 class="portfolio-title">10 Marla Designer Villas</h3>
+            <button type="button" class="portfolio-availability-link" onclick="openProjectInquiryModal('10 Marla Designer Villas', 'Gulberg, Quaidabad', 'PKR 2.40 Crore', this)">
+              <span>CHECK AVAILABILITY</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Column 2: Text Top, Image Bottom -->
+        <article class="portfolio-item portfolio-item-even">
+          <div class="portfolio-meta portfolio-meta-top">
+            <div class="portfolio-location">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>MAIN BAZAAR, QUAIDABAD</span>
+            </div>
+            <h3 class="portfolio-title">Premium Corporate Plaza</h3>
+            <button type="button" class="portfolio-availability-link" onclick="openProjectInquiryModal('Premium Corporate Plaza', 'Main Bazaar, Quaidabad', 'PKR 1.85 Crore', this)">
+              <span>CHECK AVAILABILITY</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </button>
+          </div>
+          <div class="portfolio-image-wrap">
+            <div class="portfolio-image-clip">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Premium Corporate Plaza in Main Bazaar, Quaidabad" class="portfolio-img" loading="lazy">
+            </div>
+            <div class="portfolio-price-pill">
+              <span>PKR 1.85 Crore</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Column 3: Image Top, Text Bottom -->
+        <article class="portfolio-item portfolio-item-odd">
+          <div class="portfolio-image-wrap">
+            <div class="portfolio-image-clip">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="1 Kanal Elite Residences in Model Town, Quaidabad" class="portfolio-img" loading="lazy">
+            </div>
+            <div class="portfolio-price-pill">
+              <span>PKR 3.10 Crore</span>
+            </div>
+          </div>
+          <div class="portfolio-meta">
+            <div class="portfolio-location">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>MODEL TOWN, QUAIDABAD</span>
+            </div>
+            <h3 class="portfolio-title">1 Kanal Elite Residences</h3>
+            <button type="button" class="portfolio-availability-link" onclick="openProjectInquiryModal('1 Kanal Elite Residences', 'Model Town, Quaidabad', 'PKR 3.10 Crore', this)">
+              <span>CHECK AVAILABILITY</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Column 4: Text Top, Image Bottom -->
+        <article class="portfolio-item portfolio-item-even">
+          <div class="portfolio-meta portfolio-meta-top">
+            <div class="portfolio-location">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>COMMERCIAL HUB, QUAIDABAD</span>
+            </div>
+            <h3 class="portfolio-title">Prime Commercial Hub</h3>
+            <button type="button" class="portfolio-availability-link" onclick="openProjectInquiryModal('Prime Commercial Hub', 'Commercial Hub, Quaidabad', 'PKR 95 Lac', this)">
+              <span>CHECK AVAILABILITY</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </button>
+          </div>
+          <div class="portfolio-image-wrap">
+            <div class="portfolio-image-clip">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" alt="Prime Commercial Hub in Commercial Hub, Quaidabad" class="portfolio-img" loading="lazy">
+            </div>
+            <div class="portfolio-price-pill">
+              <span>PKR 95 Lac</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 1: Hot Investment Deals
+       ========================================================================== -->
+  <section class="section-padding hot-deals-section" id="hot-deals">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag"><i class="fa-solid fa-fire text-taupe"></i> High ROI Opportunities</span>
+        <h2 class="section-heading">Hot Investment Deals in Quaidabad</h2>
+        <p class="section-desc">Limited-time priority deals, easy installment plans, and verified title urgent sales.</p>
+      </div>
+
+      <div class="property-grid three-col-grid">
+        <!-- Hot Deal Card 1 -->
+        <article class="property-card hot-deal-card" data-category="houses" data-type="buy" data-size="10-marla" data-location="housing-colony" data-id="deal-1">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800&auto=format&fit=crop" alt="10 Marla Brand New Designer Villa" class="property-img" loading="lazy">
+            <div class="badge-group">
+              <span class="badge badge-sale">For Sale</span>
+              <span class="badge badge-hot"><i class="fa-solid fa-fire"></i> Hot Deal</span>
+            </div>
+            <button class="favorite-btn" aria-label="Add to wishlist" onclick="toggleFavorite(this)">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <div class="price-tag">PKR 2.40 Crore</div>
+          </div>
+          <div class="card-content">
+            <div class="card-location">
+              <i class="fa-solid fa-location-dot"></i> Gulberg Housing Scheme, Quaidabad
+            </div>
+            <h3 class="card-title">10 Marla Modern Luxury Designer Villa</h3>
+            <p class="card-description">Double unit Spanish architecture house with Italian marble flooring, lush lawn, and imported fittings.</p>
+            
+            <div class="card-specs">
+              <div class="spec-item"><i class="fa-solid fa-bed"></i> <span>5 Beds</span></div>
+              <div class="spec-item"><i class="fa-solid fa-bath"></i> <span>6 Baths</span></div>
+              <div class="spec-item"><i class="fa-solid fa-vector-square"></i> <span>10 Marla</span></div>
+            </div>
+
+            <div class="card-actions">
+              <button class="btn-card-outline" onclick="openPropertyDetailModalById('deal-1')">
+                <i class="fa-regular fa-eye"></i> View Details
+              </button>
+              
+            </div>
+          </div>
+        </article>
+
+        <!-- Hot Deal Card 2 -->
+        <article class="property-card hot-deal-card" data-category="plots" data-type="plots" data-size="1-kanal" data-location="civil-lines" data-id="deal-2">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop" alt="1 Kanal Residential Corner Plot" class="property-img" loading="lazy">
+            <div class="badge-group">
+              <span class="badge badge-sale">For Sale</span>
+              <span class="badge badge-installments"><i class="fa-solid fa-calendar-check"></i> Installments Available</span>
+            </div>
+            <button class="favorite-btn" aria-label="Add to wishlist" onclick="toggleFavorite(this)">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <div class="price-tag">PKR 75 Lac</div>
+          </div>
+          <div class="card-content">
+            <div class="card-location">
+              <i class="fa-solid fa-location-dot"></i> Model Town Block B, Quaidabad
+            </div>
+            <h3 class="card-title">1 Kanal Prime Corner Residential Plot</h3>
+            <p class="card-description">Facing 60ft wide road with ready possession, electricity, gas approval and 2.5 years flexible quarterly installments.</p>
+            
+            <div class="card-specs">
+              <div class="spec-item"><i class="fa-solid fa-shield-halved"></i> <span>Registry Intiqal</span></div>
+              <div class="spec-item"><i class="fa-solid fa-road"></i> <span>60ft Road</span></div>
+              <div class="spec-item"><i class="fa-solid fa-vector-square"></i> <span>1 Kanal</span></div>
+            </div>
+
+            <div class="card-actions">
+              <button class="btn-card-outline" onclick="openPropertyDetailModalById('deal-2')">
+                <i class="fa-regular fa-eye"></i> View Details
+              </button>
+              
+            </div>
+          </div>
+        </article>
+
+        <!-- Hot Deal Card 3 -->
+        <article class="property-card hot-deal-card" data-category="commercial" data-type="commercial" data-size="commercial-shop" data-location="main-bazaar" data-id="deal-3">
+          <div class="card-image-wrap">
+            <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=800&auto=format&fit=crop" alt="Main Bazaar Commercial Shop" class="property-img" loading="lazy">
+            <div class="badge-group">
+              <span class="badge badge-sale">For Sale</span>
+              <span class="badge badge-urgent"><i class="fa-solid fa-bolt"></i> Urgent Sale</span>
+            </div>
+            <button class="favorite-btn" aria-label="Add to wishlist" onclick="toggleFavorite(this)">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <div class="price-tag">PKR 48 Lac <span class="old-price">PKR 55 Lac</span></div>
+          </div>
+          <div class="card-content">
+            <div class="card-location">
+              <i class="fa-solid fa-location-dot"></i> Main Bazaar, Commercial Hub, Quaidabad
+            </div>
+            <h3 class="card-title">Ground Floor Running Commercial Shop</h3>
+            <p class="card-description">High footfall prime location with active monthly rental return of PKR 35,000. Owner moving abroad, price negotiable.</p>
+            
+            <div class="card-specs">
+              <div class="spec-item"><i class="fa-solid fa-money-bill-trend-up"></i> <span>High ROI</span></div>
+              <div class="spec-item"><i class="fa-solid fa-store"></i> <span>Ground Floor</span></div>
+              <div class="spec-item"><i class="fa-solid fa-vector-square"></i> <span>2.5 Marla</span></div>
+            </div>
+
+            <div class="card-actions">
+              <button class="btn-card-outline" onclick="openPropertyDetailModalById('deal-3')">
+                <i class="fa-regular fa-eye"></i> View Details
+              </button>
+              
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2: Featured Properties with Dynamic Filter Tabs
+       ========================================================================== -->
+  <section class="section-padding featured-properties-section" id="properties">
+    <div class="container">
+      <div class="section-header text-center featured-header">
+        <div class="portfolio-eyebrow-wrap">
+          <span class="portfolio-eyebrow">FEATURED PROPERTIES</span>
+        </div>
+        <h2 class="section-heading featured-heading">Featured Properties in Quaidabad</h2>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="property-filter-nav">
+        <button type="button" class="filter-btn active" data-filter="all">All (6)</button>
+        <button type="button" class="filter-btn" data-filter="houses">Houses</button>
+        <button type="button" class="filter-btn" data-filter="plots">Plots</button>
+        <button type="button" class="filter-btn" data-filter="commercial">Commercial</button>
+      </div>
+
+      <!-- 6 Realistic Property Cards Single-Row Seamless Continuous Marquee Track -->
+      <div class="marquee-slider-container">
+        <!-- Edge Fade Masks -->
+        <div class="marquee-fade-left"></div>
+        <div class="marquee-fade-right"></div>
+
+        <div class="marquee-track" id="featuredPropertiesGrid">
+          
+          <!-- Property 1: House -->
+          <article class="property-card" data-category="houses" data-type="buy" data-size="5-marla" data-location="civil-lines" data-price-lac="115" data-id="prop-1">
+            <div class="card-image-wrap">
+              <div class="card-image-clip">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" alt="5 Marla Brand New House" class="property-img" loading="lazy">
+              </div>
+              <div class="badge-group">
+                <span class="badge badge-sale">FOR SALE</span>
+              </div>
+              <button type="button" class="favorite-btn" aria-label="Add to wishlist" onclick="toggleFavorite(this)">
+                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+              </button>
+              <div class="price-tag"><span>PKR 1.15 Crore</span></div>
+            </div>
+            <div class="card-content">
+              <div class="card-location">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Civil Lines, Quaidabad
+              </div>
+              <h3 class="card-title">5 Marla Contemporary Double Story House</h3>
+              <p class="card-description">Solid brick construction with 3 master bedrooms, fall ceiling, dual kitchens, and independent car porch.</p>
+              <div class="card-specs">
+                <div class="spec-item"><i class="fa-solid fa-bed" aria-hidden="true"></i> <span>3 Beds</span></div>
+                <div class="spec-item"><i class="fa-solid fa-bath" aria-hidden="true"></i> <span>4 Baths</span></div>
+                <div class="spec-item"><i class="fa-solid fa-vector-square" aria-hidden="true"></i> <span>5 Marla</span></div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="btn-card-outline" onclick="openPropertyDetailModalById('prop-1')">
+                  <span>View Details</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Property 2: Plot -->
+          <article class="property-card" data-category="plots" data-type="plots" data-size="5-marla" data-location="housing-colony" data-price-lac="28.5" data-id="prop-2">
+            <div class="card-image-wrap">
+              <div class="card-image-clip">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop" alt="5 Marla Developed Residential Plot" class="property-img" loading="lazy">
+              </div>
+              <div class="badge-group">
+                <span class="badge badge-sale">FOR SALE</span>
+              </div>
+              <button type="button" class="favorite-btn" aria-label="Add to wishlist" onclick="toggleFavorite(this)">
+                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+              </button>
+              <div class="price-tag"><span>PKR 28.5 Lac</span></div>
+            </div>
+            <div class="card-content">
+              <div class="card-location">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Gulberg Housing Scheme, Quaidabad
+              </div>
+              <h3 class="card-title">5 Marla Developed Residential Plot</h3>
+              <p class="card-description">Ready for immediate house construction. Sewerage lines laid, boundary wall completed, peaceful neighborhood.</p>
+              <div class="card-specs">
+                <div class="spec-item"><i class="fa-solid fa-file-contract" aria-hidden="true"></i> <span>Direct Owner</span></div>
+                <div class="spec-item"><i class="fa-solid fa-compass" aria-hidden="true"></i> <span>East Open</span></div>
+                <div class="spec-item"><i class="fa-solid fa-vector-square" aria-hidden="true"></i> <span>5 Marla</span></div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="btn-card-outline" onclick="openPropertyDetailModalById('prop-2')">
+                  <span>View Details</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Property 3: Commercial Plaza/Floor -->
+          <article class="property-card" data-category="commercial" data-type="commercial" data-size="commercial-plaza" data-location="railway-road" data-price-lac="165" data-id="prop-3">
+            <div class="card-image-wrap">
+              <div class="card-image-clip">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Commercial Plaza Floor" class="property-img" loading="lazy">
+              </div>
+              <div class="badge-group">
+                <span class="badge badge-sale">FOR SALE</span>
+              </div>
+              <button type="button" class="favorite-btn" aria-label="Add to wishlist" onclick="toggleFavorite(this)">
+                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+              </button>
+              <div class="price-tag"><span>PKR 1.65 Crore</span></div>
+            </div>
+            <div class="card-content">
+              <div class="card-location">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Railway Road Business Hub, Quaidabad
+              </div>
+              <h3 class="card-title">Commercial Plaza First Floor Office Suite</h3>
+              <p class="card-description">Spacious open hall ideal for banks, software houses, or corporate franchises. Dedicated lift and parking access.</p>
+              <div class="card-specs">
+                <div class="spec-item"><i class="fa-solid fa-elevator" aria-hidden="true"></i> <span>Lift Access</span></div>
+                <div class="spec-item"><i class="fa-solid fa-car" aria-hidden="true"></i> <span>Dedicated Park</span></div>
+                <div class="spec-item"><i class="fa-solid fa-vector-square" aria-hidden="true"></i> <span>6 Marla</span></div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="btn-card-outline" onclick="openPropertyDetailModalById('prop-3')">
+                  <span>View Details</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Property 4: House (For Rent) -->
+          <article class="property-card" data-category="houses" data-type="rent" data-size="10-marla" data-location="civil-lines" data-price-lac="0.85" data-id="prop-4">
+            <div class="card-image-wrap">
+              <div class="card-image-clip">
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=800&auto=format&fit=crop" alt="10 Marla Luxury House For Rent" class="property-img" loading="lazy">
+              </div>
+              <div class="badge-group">
+                <span class="badge badge-rent">FOR RENT</span>
+              </div>
+              <button type="button" class="favorite-btn" aria-label="Add to wishlist" onclick="toggleFavorite(this)">
+                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+              </button>
+              <div class="price-tag"><span>PKR 85,000 <small class="rent-period">/ month</small></span></div>
+            </div>
+            <div class="card-content">
+              <div class="card-location">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Model Town Executive Block, Quaidabad
+              </div>
+              <h3 class="card-title">10 Marla Luxury Furnished Residence</h3>
+              <p class="card-description">Fully secure gated living with servant quarter, solar power setup, lawn, and spacious double car porch.</p>
+              <div class="card-specs">
+                <div class="spec-item"><i class="fa-solid fa-bed" aria-hidden="true"></i> <span>4 Beds</span></div>
+                <div class="spec-item"><i class="fa-solid fa-bath" aria-hidden="true"></i> <span>5 Baths</span></div>
+                <div class="spec-item"><i class="fa-solid fa-vector-square" aria-hidden="true"></i> <span>10 Marla</span></div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="btn-card-outline" onclick="openPropertyDetailModalById('prop-4')">
+                  <span>View Details</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Property 5: Plot -->
+          <article class="property-card" data-category="plots" data-type="plots" data-size="10-marla" data-location="sargodha-road" data-price-lac="54" data-id="prop-5">
+            <div class="card-image-wrap">
+              <div class="card-image-clip">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop" alt="10 Marla Commercial-cum-Residential Plot" class="property-img" loading="lazy">
+              </div>
+              <div class="badge-group">
+                <span class="badge badge-sale">FOR SALE</span>
+              </div>
+              <button type="button" class="favorite-btn" aria-label="Add to wishlist" onclick="toggleFavorite(this)">
+                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+              </button>
+              <div class="price-tag"><span>PKR 54 Lac</span></div>
+            </div>
+            <div class="card-content">
+              <div class="card-location">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sargodha Road Belt, Quaidabad
+              </div>
+              <h3 class="card-title">10 Marla Main Boulevard Residential Plot</h3>
+              <p class="card-description">Positioned on 50ft wide boulevard. Clear documentation with immediate registry intiqal and utility approvals.</p>
+              <div class="card-specs">
+                <div class="spec-item"><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i> <span>Registry Intiqal</span></div>
+                <div class="spec-item"><i class="fa-solid fa-road" aria-hidden="true"></i> <span>50ft Front</span></div>
+                <div class="spec-item"><i class="fa-solid fa-vector-square" aria-hidden="true"></i> <span>10 Marla</span></div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="btn-card-outline" onclick="openPropertyDetailModalById('prop-5')">
+                  <span>View Details</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Property 6: Commercial Shop (Rent) -->
+          <article class="property-card" data-category="commercial" data-type="rent" data-size="commercial-shop" data-location="mianwali-bypass" data-price-lac="0.45" data-id="prop-6">
+            <div class="card-image-wrap">
+              <div class="card-image-clip">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop" alt="Main Road Commercial Shop" class="property-img" loading="lazy">
+              </div>
+              <div class="badge-group">
+                <span class="badge badge-rent">FOR RENT</span>
+              </div>
+              <button type="button" class="favorite-btn" aria-label="Add to wishlist" onclick="toggleFavorite(this)">
+                <i class="fa-regular fa-heart" aria-hidden="true"></i>
+              </button>
+              <div class="price-tag"><span>PKR 45,000 <small class="rent-period">/ month</small></span></div>
+            </div>
+            <div class="card-content">
+              <div class="card-location">
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Mianwali Bypass Main Junction, Quaidabad
+              </div>
+              <h3 class="card-title">Prominent Highway Facing Commercial Shop</h3>
+              <p class="card-description">High-visibility showroom shop with glass front, tiled floor, roller shutter, and broad customer parking in front.</p>
+              <div class="card-specs">
+                <div class="spec-item"><i class="fa-solid fa-eye" aria-hidden="true"></i> <span>Main Front</span></div>
+                <div class="spec-item"><i class="fa-solid fa-bolt" aria-hidden="true"></i> <span>3-Phase Meter</span></div>
+                <div class="spec-item"><i class="fa-solid fa-vector-square" aria-hidden="true"></i> <span>2 Marla</span></div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="btn-card-outline" onclick="openPropertyDetailModalById('prop-6')">
+                  <span>View Details</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div id="featuredEmptyState" class="featured-empty-state" role="status" aria-live="polite">
+        <h3>No Properties Match Your Filters</h3>
+        <p>Try broadening your location, size, or budget range to view all verified listings in Quaidabad.</p>
+        <button type="button" class="btn-search-submit" onclick="resetPropertyFilters()">
+          <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+          <span>Reset All Filters</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: Trust Stats Bar
+       ========================================================================== -->
+  <section class="trust-stats-bar" aria-label="Trust statistics">
+    <div class="trust-marquee-viewport">
+      <div class="trust-marquee-track">
+        <!-- Set 1 -->
+        <div class="trust-stat-box">
+          <div class="trust-icon-wrap" aria-hidden="true">
+            <i class="fa-solid fa-hourglass-half"></i>
+          </div>
+          <div class="trust-info">
+            <span class="trust-value">12+</span>
+            <span class="trust-title">Years of Experience</span>
+          </div>
+        </div>
+
+        <div class="trust-stat-box">
+          <div class="trust-icon-wrap" aria-hidden="true">
+            <i class="fa-solid fa-people-roof"></i>
+          </div>
+          <div class="trust-info">
+            <span class="trust-value">850+</span>
+            <span class="trust-title">Happy Families</span>
+          </div>
+        </div>
+
+        <div class="trust-stat-box">
+          <div class="trust-icon-wrap" aria-hidden="true">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <div class="trust-info">
+            <span class="trust-value">100%</span>
+            <span class="trust-title">Verified Documents</span>
+          </div>
+        </div>
+
+        <div class="trust-stat-box">
+          <div class="trust-icon-wrap" aria-hidden="true">
+            <i class="fa-solid fa-handshake-angle"></i>
+          </div>
+          <div class="trust-info">
+            <span class="trust-value">1,200+</span>
+            <span class="trust-title">Properties Sold</span>
+          </div>
+        </div>
+
+        <!-- Set 2 (Seamless Loop Duplicate) -->
+        <div class="trust-stat-box" aria-hidden="true">
+          <div class="trust-icon-wrap">
+            <i class="fa-solid fa-hourglass-half"></i>
+          </div>
+          <div class="trust-info">
+            <span class="trust-value">12+</span>
+            <span class="trust-title">Years of Experience</span>
+          </div>
+        </div>
+
+        <div class="trust-stat-box" aria-hidden="true">
+          <div class="trust-icon-wrap">
+            <i class="fa-solid fa-people-roof"></i>
+          </div>
+          <div class="trust-info">
+            <span class="trust-value">850+</span>
+            <span class="trust-title">Happy Families</span>
+          </div>
+        </div>
+
+        <div class="trust-stat-box" aria-hidden="true">
+          <div class="trust-icon-wrap">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <div class="trust-info">
+            <span class="trust-value">100%</span>
+            <span class="trust-title">Verified Documents</span>
+          </div>
+        </div>
+
+        <div class="trust-stat-box" aria-hidden="true">
+          <div class="trust-icon-wrap">
+            <i class="fa-solid fa-handshake-angle"></i>
+          </div>
+          <div class="trust-info">
+            <span class="trust-value">1,200+</span>
+            <span class="trust-title">Properties Sold</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: Why Choose Us / About Section (Asymmetric Editorial Split)
+       ========================================================================== -->
+  <section class="section-padding about-section" id="about">
+    <!-- Subtle Architectural Blueprint Watermarks (Top-Left & Bottom-Right) -->
+    <svg class="about-blueprint about-blueprint-tl" viewBox="0 0 280 240" fill="none" stroke="#B58A3D" stroke-width="1" aria-hidden="true">
+      <rect x="20" y="20" width="220" height="180" />
+      <line x1="115" y1="20" x2="115" y2="200" />
+      <line x1="20" y1="110" x2="240" y2="110" />
+      <path d="M115 72 A34 34 0 0 1 149 106" />
+      <rect x="38" y="38" width="58" height="54" stroke-dasharray="4 3" />
+    </svg>
+    <svg class="about-blueprint about-blueprint-br" viewBox="0 0 280 240" fill="none" stroke="#B58A3D" stroke-width="1" aria-hidden="true">
+      <rect x="30" y="30" width="220" height="180" />
+      <line x1="140" y1="30" x2="140" y2="210" />
+      <line x1="30" y1="120" x2="250" y2="120" />
+      <circle cx="84" cy="74" r="22" stroke-dasharray="3 3" />
+      <path d="M140 84 A32 32 0 0 1 172 116" />
+    </svg>
+
+    <div class="container about-container">
+      <div class="about-grid">
+        <!-- Left Column: Framed Residence Photo + Floating 3D Glass Stat Card -->
+        <div class="about-image-column">
+          <div class="about-image-container">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" alt="Sunlit Luxury Pakistani Designer Residence in Quaidabad" class="about-main-image" loading="lazy">
+            <div class="about-stat-glass-card">
+              <div class="about-stat-row">
+                <strong class="stat-highlight-gold">12+ Years of</strong>
+                <span class="stat-label-dark">Trusted Excellence</span>
+              </div>
+              <div class="about-stat-divider" aria-hidden="true"></div>
+              <div class="about-stat-row">
+                <strong class="stat-highlight-emerald">500+ Verified</strong>
+                <span class="stat-label-dark">Properties Delivered</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Editorial Copy, 2x2 Crystal Badges & Emerald CTA -->
+        <div class="about-content-column">
+          <div class="about-eyebrow-wrap">
+            <span class="about-eyebrow">WHY CHOOSE QUAIDABAD REAL ESTATE</span>
+          </div>
+          <h2 class="about-heading">
+            Building Trust &amp; Securing Your Legacy in Quaidabad
+          </h2>
+          <p class="about-subtitle">
+            100% Patwarkhana &amp; Registry verification, transparent dealings, and high-ROI investments for local and overseas Pakistanis.
+          </p>
+
+          <!-- 2x2 Grid of 3D Crystal Feature Badges -->
+          <div class="about-badges-grid">
+            <div class="crystal-badge-card">
+              <div class="badge-medallion">
+                <i class="fa-solid fa-file-shield" aria-hidden="true"></i>
+              </div>
+              <span class="badge-label">100% Verified Registry &amp; Fard</span>
+            </div>
+
+            <div class="crystal-badge-card">
+              <div class="badge-medallion">
+                <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+              </div>
+              <span class="badge-label">Transparent Direct Deals</span>
+            </div>
+
+            <div class="crystal-badge-card">
+              <div class="badge-medallion">
+                <i class="fa-solid fa-globe" aria-hidden="true"></i>
+              </div>
+              <span class="badge-label">Overseas Pakistani Desk</span>
+            </div>
+
+            <div class="crystal-badge-card">
+              <div class="badge-medallion">
+                <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
+              </div>
+              <span class="badge-label">High-ROI Prime Locations</span>
+            </div>
+          </div>
+
+          <div class="about-cta-row">
+            <button type="button" onclick="openConsultationModal(this)" class="btn-about-consultation">
+              <span>Book a Private Consultation</span>
+              <span class="btn-gold-badge" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: Our Services Grid (4 Clean Cards with Hover Elevation)
+       ========================================================================== -->
+  <section class="section-padding services-section" id="services">
+    <div class="container">
+      <div class="section-header text-center services-header">
+        <div class="portfolio-eyebrow-wrap">
+          <span class="portfolio-eyebrow">TAILORED SOLUTIONS</span>
+        </div>
+        <h2 class="section-heading services-heading">Our Comprehensive Services</h2>
+        <p class="section-desc services-subtitle">From initial property search to legal possession and turn-key construction, we handle every step with precision.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service Card 1 -->
+        <div class="service-card crystal-glass-card">
+          <div class="service-card-bg" aria-hidden="true">
+            <svg class="service-card-blueprint" viewBox="0 0 180 150" fill="none" stroke="#B58A3D" stroke-width="1">
+              <rect x="20" y="12" width="145" height="120" />
+              <line x1="85" y1="12" x2="85" y2="132" />
+              <line x1="20" y1="72" x2="165" y2="72" />
+              <path d="M85 45 A24 24 0 0 1 109 69" />
+              <rect x="34" y="26" width="38" height="32" stroke-dasharray="3 2" />
+            </svg>
+          </div>
+          <div class="service-medallion-wrap">
+            <div class="service-gold-medallion">
+              <i class="fa-solid fa-city" aria-hidden="true"></i>
+            </div>
+          </div>
+          <h3 class="service-title">Property Buying & Selling</h3>
+          <p class="service-subtitle">(Residential & Commercial)</p>
+          <p class="service-description">
+            Access verified residential homes, luxury villas, commercial shops, and high-street business plazas across Quaidabad with genuine sellers and active buyers.
+          </p>
+          <ul class="service-points">
+            <li><span class="gold-bullet"></span> Prime Location Houses & Villas</li>
+            <li><span class="gold-bullet"></span> Commercial Plazas & Shophouses</li>
+            <li><span class="gold-bullet"></span> Pre-screened Buyers & Sellers</li>
+          </ul>
+          <div class="service-cta-wrap">
+            <button type="button" class="btn-inquire-service" onclick="openServiceInquiryModal('Property Buying & Selling (Residential & Commercial)', this)">
+              <span>Inquire Service</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="service-card crystal-glass-card">
+          <div class="service-card-bg" aria-hidden="true">
+            <svg class="service-card-blueprint" viewBox="0 0 180 150" fill="none" stroke="#B58A3D" stroke-width="1">
+              <rect x="20" y="12" width="145" height="120" />
+              <line x1="85" y1="12" x2="85" y2="132" />
+              <line x1="20" y1="72" x2="165" y2="72" />
+              <path d="M85 45 A24 24 0 0 1 109 69" />
+              <rect x="34" y="26" width="38" height="32" stroke-dasharray="3 2" />
+            </svg>
+          </div>
+          <div class="service-medallion-wrap">
+            <div class="service-gold-medallion">
+              <i class="fa-solid fa-stamp" aria-hidden="true"></i>
+            </div>
+          </div>
+          <h3 class="service-title">Plot Files & Registry Verification</h3>
+          <p class="service-subtitle">(100% Secure Documentation)</p>
+          <p class="service-description">
+            Complete verification of revenue records (Fard, Intiqal, Aks Shajra, Registry). We inspect patwarkhana files to protect your investment from fraudulent claims.
+          </p>
+          <ul class="service-points">
+            <li><span class="gold-bullet"></span> Land Title & Ownership Verification</li>
+            <li><span class="gold-bullet"></span> Biometric Registry & Transfer Support</li>
+            <li><span class="gold-bullet"></span> Spot Demarcation & Boundary Check</li>
+          </ul>
+          <div class="service-cta-wrap">
+            <button type="button" class="btn-inquire-service" onclick="openServiceInquiryModal('Plot Files & Registry Verification (100% Secure Documentation)', this)">
+              <span>Inquire Service</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="service-card crystal-glass-card">
+          <div class="service-card-bg" aria-hidden="true">
+            <svg class="service-card-blueprint" viewBox="0 0 180 150" fill="none" stroke="#B58A3D" stroke-width="1">
+              <rect x="20" y="12" width="145" height="120" />
+              <line x1="85" y1="12" x2="85" y2="132" />
+              <line x1="20" y1="72" x2="165" y2="72" />
+              <path d="M85 45 A24 24 0 0 1 109 69" />
+              <rect x="34" y="26" width="38" height="32" stroke-dasharray="3 2" />
+            </svg>
+          </div>
+          <div class="service-medallion-wrap">
+            <div class="service-gold-medallion">
+              <i class="fa-solid fa-compass-drafting" aria-hidden="true"></i>
+            </div>
+          </div>
+          <h3 class="service-title">Construction & Map Approval</h3>
+          <p class="service-subtitle">(Turnkey Home Building)</p>
+          <p class="service-description">
+            Architectural floor plan drafting, 3D structural elevation, municipal map approval, and turnkey construction with high-grade steel, cement, and electrical work.
+          </p>
+          <ul class="service-points">
+            <li><span class="gold-bullet"></span> Modern 2D/3D Architectural Blueprints</li>
+            <li><span class="gold-bullet"></span> Tehsil Council / TMA Map Clearances</li>
+            <li><span class="gold-bullet"></span> Grey Structure & Turnkey Finishing</li>
+          </ul>
+          <div class="service-cta-wrap">
+            <button type="button" class="btn-inquire-service" onclick="openServiceInquiryModal('Construction & Map Approval (Turnkey Home Building)', this)">
+              <span>Inquire Service</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="service-card crystal-glass-card">
+          <div class="service-card-bg" aria-hidden="true">
+            <svg class="service-card-blueprint" viewBox="0 0 180 150" fill="none" stroke="#B58A3D" stroke-width="1">
+              <rect x="20" y="12" width="145" height="120" />
+              <line x1="85" y1="12" x2="85" y2="132" />
+              <line x1="20" y1="72" x2="165" y2="72" />
+              <path d="M85 45 A24 24 0 0 1 109 69" />
+              <rect x="34" y="26" width="38" height="32" stroke-dasharray="3 2" />
+            </svg>
+          </div>
+          <div class="service-medallion-wrap">
+            <div class="service-gold-medallion">
+              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            </div>
+          </div>
+          <h3 class="service-title">Property Valuation & Consultancy</h3>
+          <p class="service-subtitle">(High ROI Guidance)</p>
+          <p class="service-description">
+            Objective valuation grounded in current ground realities. Strategic portfolio guidance for overseas Pakistanis and investors seeking superior capital growth.
+          </p>
+          <ul class="service-points">
+            <li><span class="gold-bullet"></span> Accurate Fair-Market Appraisal</li>
+            <li><span class="gold-bullet"></span> Commercial Rental Yield Projections</li>
+            <li><span class="gold-bullet"></span> Overseas Pakistani Investor Advisory</li>
+          </ul>
+          <div class="service-cta-wrap">
+            <button type="button" class="btn-inquire-service" onclick="openServiceInquiryModal('Property Valuation & Consultancy (High ROI Guidance)', this)">
+              <span>Inquire Service</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6: Client Testimonials & Stories
+       ========================================================================== -->
+  <section class="section-padding testimonials-section" id="testimonials">
+    <!-- Architectural Blueprint Line-Art Watermarks -->
+    <svg class="testimonials-blueprint testimonials-blueprint-tl" viewBox="0 0 280 240" fill="none" stroke="#B58A3D" stroke-width="1" aria-hidden="true">
+      <rect x="20" y="20" width="220" height="180" />
+      <line x1="115" y1="20" x2="115" y2="200" />
+      <line x1="20" y1="110" x2="240" y2="110" />
+      <path d="M115 72 A34 34 0 0 1 149 106" />
+      <rect x="38" y="38" width="58" height="54" stroke-dasharray="4 3" />
+    </svg>
+    <svg class="testimonials-blueprint testimonials-blueprint-br" viewBox="0 0 280 240" fill="none" stroke="#B58A3D" stroke-width="1" aria-hidden="true">
+      <rect x="30" y="30" width="220" height="180" />
+      <line x1="140" y1="30" x2="140" y2="210" />
+      <line x1="30" y1="120" x2="250" y2="120" />
+      <circle cx="84" cy="74" r="22" stroke-dasharray="3 3" />
+      <path d="M140 84 A32 32 0 0 1 172 116" />
+    </svg>
+
+    <div class="container testimonials-container">
+      <div class="section-header text-center testimonials-header">
+        <div class="portfolio-eyebrow-wrap">
+          <span class="portfolio-eyebrow">CLIENT TESTIMONIALS</span>
+        </div>
+        <h2 class="section-heading testimonials-heading">Trusted by Families &amp; Investors Across Quaidabad</h2>
+        <p class="section-desc testimonials-subtitle">Real stories from homeowners, commercial buyers, and overseas Pakistanis who invested with complete peace of mind.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Review Card 1 -->
+        <article class="testimonial-card">
+          <span class="testimonial-quote-watermark" aria-hidden="true">&rdquo;</span>
+          <div class="testimonial-header">
+            <div class="rating-stars" aria-label="5 out of 5 stars">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            "Quaidabad Real Estate handled our 10 Marla villa purchase in <strong>Gulberg</strong> with complete <strong>transparency</strong>. Their registry and fard verification saved us from every hassle."
+          </p>
+          <div class="client-profile">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Dr. Tariq Mahmood" class="client-avatar" loading="lazy">
+            <div class="client-meta">
+              <h4 class="client-name">Dr. Tariq Mahmood</h4>
+              <span class="client-role">Homeowner, Gulberg Quaidabad</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review Card 2 -->
+        <article class="testimonial-card">
+          <span class="testimonial-quote-watermark" aria-hidden="true">&rdquo;</span>
+          <div class="testimonial-header">
+            <div class="rating-stars" aria-label="5 out of 5 stars">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            "Living in the UK, I was hesitant to invest back home. Their overseas desk verified the entire <strong>Patwarkhana</strong> record and delivered possession of my 1 Kanal corner plot right on time."
+          </p>
+          <div class="client-profile">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Engr. Kamran Siddiqui" class="client-avatar" loading="lazy">
+            <div class="client-meta">
+              <h4 class="client-name">Engr. Kamran Siddiqui</h4>
+              <span class="client-role">Overseas Investor, Manchester UK</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review Card 3 -->
+        <article class="testimonial-card">
+          <span class="testimonial-quote-watermark" aria-hidden="true">&rdquo;</span>
+          <div class="testimonial-header">
+            <div class="rating-stars" aria-label="5 out of 5 stars">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            "We acquired a prime ground-floor commercial shop in Main Bazaar through them. Their rental yield <strong>projection</strong> was spot on and the transfer process was <strong>seamless</strong>."
+          </p>
+          <div class="client-profile">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" alt="Haji Muhammad Akram" class="client-avatar" loading="lazy">
+            <div class="client-meta">
+              <h4 class="client-name">Haji Muhammad Akram</h4>
+              <span class="client-role">Business Owner, Main Bazaar</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="testimonials-cta-wrap">
+        <button type="button" class="btn-about-consultation" onclick="openServiceInquiryModal('On-Site Property Visit Request', this)">
+          <span>Schedule Your Site Visit</span>
+          <span class="btn-gold-badge" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6B: Frequently Asked Questions (FAQ)
+       ========================================================================== -->
+  <section class="section-padding faq-section" id="faq">
+    <!-- Subtle Architectural Blueprint Watermarks -->
+    <svg class="faq-blueprint faq-blueprint-center" viewBox="0 0 320 260" fill="none" stroke="#B58A3D" stroke-width="1" aria-hidden="true">
+      <rect x="20" y="20" width="260" height="200" />
+      <line x1="135" y1="20" x2="135" y2="220" />
+      <line x1="20" y1="120" x2="280" y2="120" />
+      <path d="M135 80 A36 36 0 0 1 171 116" />
+      <rect x="40" y="38" width="72" height="62" stroke-dasharray="4 3" />
+      <circle cx="210" cy="170" r="24" stroke-dasharray="3 3" />
+    </svg>
+
+    <div class="container faq-container">
+      <div class="faq-split-grid">
+        <!-- Left Column: Editorial Header & Advisor Callout Box -->
+        <div class="faq-left-col">
+          <div class="about-eyebrow-wrap">
+            <span class="about-eyebrow">COMMON QUERIES</span>
+          </div>
+          <h2 class="faq-heading">Answers to Your Property & Investment Questions</h2>
+          <p class="faq-subtitle">
+            Everything you need to know about registry verification, plot files, installment plans, and overseas property transfers in Quaidabad.
+          </p>
+
+          <div class="faq-advisor-box">
+            <div class="faq-headset-medallion" aria-hidden="true">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <div class="faq-advisor-content">
+              <h3 class="faq-advisor-title">Still Have Specific Questions?</h3>
+              <button type="button" class="btn-about-consultation btn-faq-advisor" onclick="openServiceInquiryModal('Advisor Consultation (FAQ Inquiry)', this)">
+                <span>Speak With an Advisor</span>
+                <span class="btn-gold-badge" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive 3D Crystal Glass Accordion -->
+        <div class="faq-right-col">
+          <div class="faq-accordion-list" id="faqAccordion">
+            <!-- Q1 (Expanded by default) -->
+            <div class="faq-item open">
+              <button type="button" class="faq-trigger" aria-expanded="true" aria-controls="faq-panel-1" id="faq-btn-1">
+                <span class="faq-question-text">How do you verify plot registry and Patwarkhana records before purchase?</span>
+                <span class="faq-toggle-badge" aria-hidden="true">−</span>
+              </button>
+              <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
+                <p>Our legal team physically inspects the Fard, Intiqal, Aks Shajra, and Tehsil Municipal Administration records to guarantee 100% dispute-free ownership before any token money is paid.</p>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2">
+                <span class="faq-question-text">Can overseas Pakistanis buy and transfer property without visiting?</span>
+                <span class="faq-toggle-badge" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2" hidden>
+                <p>Yes. Through our dedicated Overseas Pakistani Desk, we handle biometric power-of-attorney verification, video site inspections, and verified revenue transfers end-to-end.</p>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3">
+                <span class="faq-question-text">What are the current Marla and Kanal plot sizes available in Quaidabad?</span>
+                <span class="faq-toggle-badge" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3" hidden>
+                <p>We offer verified residential and commercial plots ranging from 3 Marla, 5 Marla, 7 Marla, and 10 Marla up to 1 Kanal and 2 Kanal in prime blocks including Gulberg, Civil Lines, and Model Town.</p>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4">
+                <span class="faq-question-text">Do you offer turnkey house construction and map approval services?</span>
+                <span class="faq-toggle-badge" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4" hidden>
+                <p>Yes, our architectural and engineering team manages 2D/3D blueprints, Tehsil Council/TMA map clearances, grey structure, and complete turnkey finishing.</p>
+              </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5">
+                <span class="faq-question-text">How are commercial rental yields calculated for Main Bazaar plazas?</span>
+                <span class="faq-toggle-badge" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5" hidden>
+                <p>We evaluate footfall density, frontage width, and verified lease comparables across Main Bazaar and Railway Road to provide accurate annual rental yield projections.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 7: Private Consultation Banner (3D Crystal Glass Card)
+       ========================================================================== -->
+  <section class="cta-banner-section" id="consultation">
+    <svg class="cta-blueprint cta-blueprint-tr" viewBox="0 0 320 260" fill="none" stroke="#B58A3D" stroke-width="1" aria-hidden="true">
+      <rect x="20" y="20" width="260" height="200" />
+      <line x1="135" y1="20" x2="135" y2="220" />
+      <line x1="20" y1="120" x2="280" y2="120" />
+      <path d="M135 80 A36 36 0 0 1 171 116" />
+      <rect x="40" y="38" width="72" height="62" stroke-dasharray="4 3" />
+    </svg>
+
+    <div class="container cta-container">
+      <div class="cta-banner-card">
+        <svg class="cta-card-blueprint" viewBox="0 0 260 200" fill="none" stroke="#B58A3D" stroke-width="1" aria-hidden="true">
+          <rect x="16" y="16" width="220" height="165" />
+          <line x1="110" y1="16" x2="110" y2="181" />
+          <line x1="16" y1="98" x2="236" y2="98" />
+          <path d="M110 64 A30 30 0 0 1 140 94" />
+        </svg>
+
+        <!-- Left Column: Direct Office Info -->
+        <div class="cta-banner-left">
+          <div class="cta-eyebrow-wrap">
+            <span class="cta-eyebrow">START YOUR JOURNEY</span>
+          </div>
+          <h2 class="cta-title">Schedule a Private Consultation or Site Visit</h2>
+
+          <div class="cta-info-list">
+            <div class="cta-info-row">
+              <div class="cta-icon-medallion" aria-hidden="true">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <span class="cta-info-text">Main Sargodha Road, Quaidabad, District Khushab</span>
+            </div>
+
+            <div class="cta-info-row">
+              <div class="cta-icon-medallion" aria-hidden="true">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <a href="tel:+923000000000" class="cta-info-text cta-info-link">+92 300 0000000</a>
+            </div>
+
+            <div class="cta-info-row">
+              <div class="cta-icon-medallion" aria-hidden="true">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <span class="cta-info-text">Mon – Sat: 9:30 AM – 7:30 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: 3D Frosted Glass Callback Form -->
+        <div class="cta-banner-right">
+          <div class="lead-form-card">
+            <form id="leadGenerationForm" onsubmit="event.preventDefault(); handleLeadSubmit();">
+              <div class="form-group">
+                <label for="leadName" class="sr-only">Full Name</label>
+                <input type="text" id="leadName" name="name" placeholder="Full Name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="leadContact" class="sr-only">Phone / Email Address</label>
+                <input type="text" id="leadContact" name="contact" placeholder="Phone / Email Address" required>
+              </div>
+
+              <div class="form-group custom-select-wrap">
+                <label for="leadInterest" class="sr-only">Interested In</label>
+                <select id="leadInterest" name="interest" required>
+                  <option value="" disabled selected>Interested In (Buy / Plots / Commercial / Construction)</option>
+                  <option value="Buy - Residential House / Villa">Buy — Residential House / Villa</option>
+                  <option value="Plots - Residential & Corner Plots">Plots — Residential &amp; Corner Plots</option>
+                  <option value="Commercial - Plazas & Main Bazaar Shops">Commercial — Plazas &amp; Main Bazaar Shops</option>
+                  <option value="Construction - Turnkey & Map Approval">Construction — Turnkey &amp; Map Approval</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn-callback-submit">
+                <span>Request Private Callback</span>
+                <span class="btn-gold-badge" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </button>
+            </form>
+
+            <div id="leadFormFeedback" class="form-feedback-message" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 8: Grand Royal Emerald Architectural Footer
+       ========================================================================== -->
+  <footer class="site-footer" id="contact">
+    <svg class="footer-blueprint footer-blueprint-left" viewBox="0 0 320 220" fill="none" stroke="#B58A3D" stroke-width="1" aria-hidden="true">
+      <rect x="20" y="20" width="260" height="170" />
+      <line x1="130" y1="20" x2="130" y2="190" />
+      <line x1="20" y1="105" x2="280" y2="105" />
+      <path d="M130 68 A32 32 0 0 1 162 100" />
+    </svg>
+    <svg class="footer-blueprint footer-blueprint-right" viewBox="0 0 320 220" fill="none" stroke="#B58A3D" stroke-width="1" aria-hidden="true">
+      <rect x="30" y="20" width="260" height="170" />
+      <line x1="160" y1="20" x2="160" y2="190" />
+      <line x1="30" y1="105" x2="290" y2="105" />
+      <circle cx="96" cy="64" r="22" stroke-dasharray="3 3" />
+    </svg>
+
+    <div class="footer-top">
+      <div class="container footer-container">
+        <div class="footer-grid">
+          <!-- Column 1: Brand -->
+          <div class="footer-col footer-about">
+            <a href="#" class="footer-brand-emblem">
+              <svg class="nexa-logo-svg" style="stroke: #F0D290;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 10.5L12 3l9 7.5V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+              <div class="logo-text-col">
+                <span class="footer-brand-bold">QUAIDABAD</span>
+                <span class="footer-brand-gold">REAL ESTATE</span>
+              </div>
+            </a>
+            <p class="footer-bio">
+              Trusted residential, commercial, and land investment advisors in Quaidabad.
+            </p>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Quick <span>Links</span></h4>
+            <ul class="footer-links">
+              <li><a href="#properties" onclick="filterByTab('buy', event)">Buy Properties</a></li>
+              <li><a href="#properties" onclick="filterByTab('commercial', event)">Commercial Plazas</a></li>
+              <li><a href="#properties" onclick="filterByTab('plots', event)">Residential Plots</a></li>
+              <li><a href="#services">Construction Services</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Prime Locations -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Prime <span>Locations</span></h4>
+            <ul class="footer-links">
+              <li><a href="#properties">Gulberg Housing Scheme</a></li>
+              <li><a href="#properties">Main Bazaar &amp; Railway Road</a></li>
+              <li><a href="#properties">Civil Lines Quaidabad</a></li>
+              <li><a href="#properties">Model Town</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Overseas Desk -->
+          <div class="footer-col footer-overseas-col">
+            <h4 class="footer-heading">Overseas <span>Desk</span></h4>
+            <p class="footer-overseas-note">Dedicated virtual property tours &amp; Patwarkhana verification for overseas Pakistanis.</p>
+            <button type="button" class="btn-virtual-tour" onclick="openServiceInquiryModal('Virtual Tour — Overseas Pakistani Desk', this)">
+              <span>Book Virtual Tour</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright-text">
+          &copy; 2026 Quaidabad Real Estate. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Sticky Floating WhatsApp Button
+       ========================================================================== -->
+  
+
+  <!-- ==========================================================================
+       MODAL 1: Rich Property Details Modal
+       ========================================================================== -->
+  <div class="property-modal" id="propertyDetailsModal" role="dialog" aria-modal="true" aria-labelledby="modalPropertyTitle" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeDetailsModal()"></div>
+    <div class="modal-content-card modal-detail-extended">
+      <button class="modal-close-btn" onclick="closeDetailsModal()" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-extended-layout">
+        <div class="modal-media-col">
+          <div class="modal-image-large-wrap">
+            <img id="modalPropertyImg" src="" alt="Property View">
+            <span id="modalPropertyBadge" class="badge badge-sale modal-floating-badge">Verified Listing</span>
+          </div>
+
+          <div class="modal-landmarks-section">
+            <h4 class="modal-subheading"><i class="fa-solid fa-map-pin text-taupe"></i> Nearby Landmarks</h4>
+            <ul id="modalLandmarksList" class="landmarks-list"></ul>
+          </div>
+
+          <div class="modal-features-section">
+            <h4 class="modal-subheading"><i class="fa-solid fa-star text-taupe"></i> Key Highlights</h4>
+            <div id="modalFeaturesTags" class="features-tags"></div>
+          </div>
+        </div>
+
+        <div class="modal-details-col">
+          <div class="modal-header-block">
+            <span class="modal-reg-tag"><i class="fa-solid fa-shield-halved"></i> 100% Verified Title</span>
+            <h3 id="modalPropertyTitle" class="modal-title">Property Title</h3>
+            <p id="modalPropertyLocation" class="modal-loc text-muted"><i class="fa-solid fa-location-dot text-taupe"></i> Location</p>
+            <div class="modal-price-wrap">
+              <span id="modalPropertyPrice" class="modal-price text-taupe">PKR 0</span>
+              <span id="modalPropertySpecs" class="modal-specs-badge">Specs</span>
+            </div>
+          </div>
+
+          <div class="modal-desc-block">
+            <h4 class="modal-subheading"><i class="fa-solid fa-circle-info text-taupe"></i> Property Overview</h4>
+            <p id="modalPropertyDesc" class="modal-text">Description goes here.</p>
+          </div>
+
+          <div class="modal-visit-form-box">
+            <h4 class="modal-subheading"><i class="fa-solid fa-calendar-check text-taupe"></i> Schedule an On-Site Visit</h4>
+            <form id="scheduleVisitForm" onsubmit="event.preventDefault(); handleVisitSubmit();">
+              <div class="visit-form-grid">
+                <input type="text" id="visitName" placeholder="Your Name" required>
+                <input type="tel" id="visitPhone" placeholder="Phone / WhatsApp" required>
+                <input type="date" id="visitDate" required>
+                <select id="visitTime" required>
+                  <option value="" disabled selected>Preferred Time</option>
+                  <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM - 1:00 PM)</option>
+                  <option value="Afternoon (2:00 PM - 5:00 PM)">Afternoon (2:00 PM - 5:00 PM)</option>
+                  <option value="Evening (5:00 PM - 7:00 PM)">Evening (5:00 PM - 7:00 PM)</option>
+                </select>
+              </div>
+              <button type="submit" class="btn-search-submit w-100" style="height: 40px; font-size: 0.85rem;">
+                <span>Confirm Property Visit Request</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="modal-action-row">
+            <a id="modalWhatsAppBtn" href="#" target="_blank" class="btn-card-wa w-100">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Consultant
+            </a>
+            <a href="tel:+923001234567" class="btn-card-outline w-100">
+              <i class="fa-solid fa-phone"></i> Call Direct
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: Consultation Booking Modal
+       ========================================================================== -->
+  <div class="property-modal" id="consultationBookingModal" role="dialog" aria-modal="true" aria-labelledby="consultModalTitle" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeConsultationModal()"></div>
+    <div class="modal-content-card modal-consultation-dialog">
+      <button class="modal-close-btn" onclick="closeConsultationModal()" aria-label="Close modal">&times;</button>
+      
+      <div class="consultation-modal-header">
+        <div class="consult-icon-circle"><i class="fa-solid fa-calendar-days"></i></div>
+        <h3 id="consultModalTitle">Book an Exclusive Consultation</h3>
+        <p>Schedule a 1-on-1 private meeting with our Senior Property Valuator & Legal Consultant in Quaidabad or via Video Call.</p>
+      </div>
+
+      <form id="consultationBookingForm" onsubmit="event.preventDefault(); handleConsultationSubmit();">
+        <div class="form-group">
+          <label for="consultName"><i class="fa-solid fa-user"></i> Full Name *</label>
+          <input type="text" id="consultName" placeholder="e.g. Malik Muhammad Awais" required>
+        </div>
+
+        <div class="form-group">
+          <label for="consultPhone"><i class="fa-solid fa-phone"></i> WhatsApp / Mobile Number *</label>
+          <input type="tel" id="consultPhone" placeholder="e.g. 0300 1234567" required>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="consultMeetingType"><i class="fa-solid fa-handshake"></i> Meeting Type *</label>
+            <select id="consultMeetingType" required>
+              <option value="In-Person at Quaidabad Office">In-Person at Quaidabad Office</option>
+              <option value="WhatsApp Video / Voice Call (Overseas)">WhatsApp Video / Voice Call (Overseas)</option>
+              <option value="On-Site Plot / Property Visit">On-Site Plot / Property Visit</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="consultDate"><i class="fa-solid fa-calendar"></i> Preferred Date *</label>
+            <input type="date" id="consultDate" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="consultNotes"><i class="fa-solid fa-comment-dots"></i> Inquiry Scope</label>
+          <input type="text" id="consultNotes" placeholder="e.g. Verification of 10 Marla Registry in Gulberg Scheme">
+        </div>
+
+        <button type="submit" class="btn-search-submit w-100" style="margin-top: 10px;">
+          <span>Confirm Appointment</span>
+          <i class="fa-solid fa-circle-check"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastNotification" class="toast-toast" role="alert" aria-live="assertive">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <div class="toast-content">
+      <h5 id="toastTitle" class="toast-title">Notification</h5>
+      <p id="toastMessage" class="toast-message">Your action has been processed.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
