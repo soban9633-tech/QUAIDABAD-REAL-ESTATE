@@ -178,7 +178,10 @@ ul {
 /* Left Cutout Tab */
 .cutout-tab-left {
   background-color: var(--card-white);
-  padding: 18px 32px 18px 24px;
+  padding: 19px 32px 18px 25px;
+  margin-top: -1px;
+  margin-left: -1px;
+  border-top-left-radius: 24px;
   border-bottom-right-radius: 28px;
   display: flex;
   align-items: center;
@@ -266,7 +269,10 @@ ul {
 /* Right Cutout Tab */
 .cutout-tab-right {
   background-color: var(--card-white);
-  padding: 14px 20px 18px 28px;
+  padding: 15px 21px 18px 28px;
+  margin-top: -1px;
+  margin-right: -1px;
+  border-top-right-radius: 24px;
   border-bottom-left-radius: 28px;
   display: flex;
   align-items: center;
