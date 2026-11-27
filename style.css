@@ -30,6 +30,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
 }
 
 body.nexa-theme {
@@ -39,6 +40,32 @@ body.nexa-theme {
   line-height: 1.6;
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+}
+
+/* Off-screen paint skipping for fast, jank-free scrolling */
+.exclusive-portfolio-section,
+.featured-properties-section,
+.about-section,
+.services-section,
+.testimonials-section,
+.faq-section,
+.cta-banner-section,
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 680px;
+}
+
+.marquee-slider-container,
+.trust-marquee-viewport {
+  contain: layout style;
+  touch-action: pan-y;
+}
+
+.marquee-track,
+.trust-marquee-track {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 a:focus-visible,
@@ -98,12 +125,42 @@ ul {
   justify-content: space-between;
 }
 
-/* Pure Clean Villa Photo Background (100% clean, ultra-HD, zero baked-in ghost text) */
+/* Pure Clean 5-Slide Hero Background Stack */
 .nexa-hero-bg {
   position: absolute;
   inset: 0;
-  background: url('ultra_hd_clean_villa_backdrop_clean.jpg') no-repeat right center / cover;
   z-index: 1;
+  overflow: hidden;
+}
+
+.hero-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 0.85s ease, transform 5.5s ease;
+  will-change: opacity, transform;
+}
+
+.hero-bg-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-bg-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 252, 245, 0.78) 0%, rgba(255, 252, 245, 0.42) 44%, rgba(255, 252, 245, 0) 76%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-bg-scrim.visible {
+  opacity: 1;
 }
 
 /* ==========================================================================
@@ -435,6 +492,76 @@ ul {
   display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
+}
+
+.hero-cta-controls-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.hero-slider-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(181, 138, 61, 0.55);
+  border-radius: 9999px;
+  padding: 5px 10px;
+}
+
+.hero-slide-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(11, 59, 36, 0.08);
+  color: var(--royal-emerald);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hero-slide-arrow:hover {
+  background: var(--royal-emerald);
+  color: #FFFFFF;
+}
+
+.hero-slide-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  border: none;
+  background: rgba(11, 59, 36, 0.28);
+  cursor: pointer;
+  padding: 0;
+  transition: width 0.25s ease, background-color 0.25s ease;
+}
+
+.hero-dot.active {
+  width: 24px;
+  background: var(--royal-emerald);
+}
+
+.nexa-hero-content.is-switching {
+  opacity: 0.25;
+  transform: translateY(4px);
+}
+
+.nexa-hero-content {
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 /* ==========================================================================
@@ -3539,8 +3666,29 @@ ul {
     right: 12px;
     bottom: 12px;
   }
+  .cta-banner-left {
+    padding: 34px 28px 24px 28px;
+  }
+  .cta-banner-right {
+    padding: 0 28px 32px 28px;
+  }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Reduce GPU blur overhead on mobile/tablet for 60fps scrolling */
+  .crystal-glass-card,
+  .testimonial-card,
+  .faq-advisor-box,
+  .faq-trigger,
+  .crystal-badge-card,
+  .lead-form-card,
+  .cta-banner-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.92);
   }
 }
 
@@ -3555,18 +3703,18 @@ ul {
   }
   .nexa-hero-inner {
     border-radius: 16px;
-    min-height: 540px;
+    min-height: 520px;
   }
   .nexa-hero-content {
     padding: 20px 16px 24px 16px;
     margin: 8px 10px 0 10px;
-    background: rgba(255, 255, 255, 0.72);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-radius: 18px;
   }
   .nexa-headline {
-    font-size: 2.35rem;
+    font-size: clamp(1.95rem, 8vw, 2.35rem);
   }
   .search-tabs-row {
     flex-wrap: wrap;
@@ -3615,13 +3763,13 @@ ul {
     left: -6px;
   }
   .cta-banner-left {
-    padding: 28px 20px;
+    padding: 26px 20px 20px 20px;
   }
   .cta-banner-right {
-    padding: 20px;
+    padding: 0 16px 22px 16px;
   }
   .lead-form-card {
-    padding: 20px;
+    padding: 18px;
   }
   .modal-media-col,
   .modal-details-col {

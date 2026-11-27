@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261127">
 </head>
 <body class="nexa-theme">
 
@@ -25,8 +25,15 @@
     <div class="nexa-hero-card">
       <div class="nexa-hero-inner">
         
-        <!-- Ultra-HD Clean Villa Canvas (Pure Sunset Villa Photo, Zero Baked-In Text) -->
-        <div class="nexa-hero-bg"></div>
+        <!-- Ultra-HD 5-Slide Hero Background Stack -->
+        <div class="nexa-hero-bg" id="heroBgSlides" aria-hidden="true">
+          <div class="hero-bg-slide active" style="background-image: url('ultra_hd_clean_villa_backdrop_clean.jpg'); background-position: right center;"></div>
+          <div class="hero-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1600&auto=format&fit=crop'); background-position: center center;"></div>
+          <div class="hero-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop'); background-position: center center;"></div>
+          <div class="hero-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop'); background-position: center center;"></div>
+          <div class="hero-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop'); background-position: center center;"></div>
+          <div class="hero-bg-scrim" id="heroBgScrim"></div>
+        </div>
 
         <!-- Custom Framed Header Tabs -->
         <header class="nexa-top-header">
@@ -93,25 +100,44 @@
         </nav>
 
         <!-- Real Left-Aligned Hero Content (Vector Typography - 0% Raster Blur) -->
-        <div class="nexa-hero-content">
-          <span class="royal-eyebrow">MORE THAN PROPERTIES</span>
+        <div class="nexa-hero-content" id="heroContentBlock">
+          <span class="royal-eyebrow" id="heroEyebrow">MORE THAN PROPERTIES</span>
           <h1 class="nexa-headline">
-            <span class="line-dark">Find a Place</span>
-            <span class="line-gold">to Call Home</span>
+            <span class="line-dark" id="heroLineDark">Find a Place</span>
+            <span class="line-gold" id="heroLineGold">to Call Home</span>
           </h1>
-          <p class="nexa-subheadline">
+          <p class="nexa-subheadline" id="heroSubheadline">
             Discover modern homes, premium locations and a lifestyle you deserve.
           </p>
 
-          <a href="#properties" class="nexa-hero-cta-btn">
-            <span>Explore Properties</span>
-            <span class="cta-white-circle">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </span>
-          </a>
+          <div class="hero-cta-controls-row">
+            <a href="#properties" class="nexa-hero-cta-btn" id="heroCtaBtn">
+              <span id="heroCtaText">Explore Properties</span>
+              <span class="cta-white-circle">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </span>
+            </a>
+
+            <!-- Hero Slide Switcher (5 Slides) -->
+            <div class="hero-slider-controls" aria-label="Hero showcase slides">
+              <button type="button" class="hero-slide-arrow" id="heroPrevBtn" aria-label="Previous slide">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <div class="hero-slide-dots" role="tablist" aria-label="Choose hero slide">
+                <button type="button" class="hero-dot active" data-slide="0" role="tab" aria-selected="true" aria-label="Slide 1: Sunset Villa"></button>
+                <button type="button" class="hero-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Slide 2: Luxury Villas"></button>
+                <button type="button" class="hero-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Slide 3: Prime Plots"></button>
+                <button type="button" class="hero-dot" data-slide="3" role="tab" aria-selected="false" aria-label="Slide 4: Commercial Plazas"></button>
+                <button type="button" class="hero-dot" data-slide="4" role="tab" aria-selected="false" aria-label="Slide 5: Turnkey Homes"></button>
+              </div>
+              <button type="button" class="hero-slide-arrow" id="heroNextBtn" aria-label="Next slide">
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- Real 3D Liquid Frosted Glass Search Bar (Docked at Bottom Edge - Razor Sharp) -->
@@ -262,7 +288,7 @@
         <article class="portfolio-item portfolio-item-odd">
           <div class="portfolio-image-wrap">
             <div class="portfolio-image-clip">
-              <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800&auto=format&fit=crop" alt="10 Marla Designer Villas in Gulberg, Quaidabad" class="portfolio-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800&auto=format&fit=crop" alt="10 Marla Designer Villas in Gulberg, Quaidabad" class="portfolio-img" decoding="async" loading="lazy">
             </div>
             <div class="portfolio-price-pill">
               <span>PKR 2.40 Crore</span>
@@ -302,7 +328,7 @@
           </div>
           <div class="portfolio-image-wrap">
             <div class="portfolio-image-clip">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Premium Corporate Plaza in Main Bazaar, Quaidabad" class="portfolio-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Premium Corporate Plaza in Main Bazaar, Quaidabad" class="portfolio-img" decoding="async" loading="lazy">
             </div>
             <div class="portfolio-price-pill">
               <span>PKR 1.85 Crore</span>
@@ -314,7 +340,7 @@
         <article class="portfolio-item portfolio-item-odd">
           <div class="portfolio-image-wrap">
             <div class="portfolio-image-clip">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="1 Kanal Elite Residences in Model Town, Quaidabad" class="portfolio-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="1 Kanal Elite Residences in Model Town, Quaidabad" class="portfolio-img" decoding="async" loading="lazy">
             </div>
             <div class="portfolio-price-pill">
               <span>PKR 3.10 Crore</span>
@@ -354,7 +380,7 @@
           </div>
           <div class="portfolio-image-wrap">
             <div class="portfolio-image-clip">
-              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" alt="Prime Commercial Hub in Commercial Hub, Quaidabad" class="portfolio-img" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" alt="Prime Commercial Hub in Commercial Hub, Quaidabad" class="portfolio-img" decoding="async" loading="lazy">
             </div>
             <div class="portfolio-price-pill">
               <span>PKR 95 Lac</span>
@@ -380,7 +406,7 @@
         <!-- Hot Deal Card 1 -->
         <article class="property-card hot-deal-card" data-category="houses" data-type="buy" data-size="10-marla" data-location="housing-colony" data-id="deal-1">
           <div class="card-image-wrap">
-            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800&auto=format&fit=crop" alt="10 Marla Brand New Designer Villa" class="property-img" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800&auto=format&fit=crop" alt="10 Marla Brand New Designer Villa" class="property-img" decoding="async" loading="lazy">
             <div class="badge-group">
               <span class="badge badge-sale">For Sale</span>
               <span class="badge badge-hot"><i class="fa-solid fa-fire"></i> Hot Deal</span>
@@ -415,7 +441,7 @@
         <!-- Hot Deal Card 2 -->
         <article class="property-card hot-deal-card" data-category="plots" data-type="plots" data-size="1-kanal" data-location="civil-lines" data-id="deal-2">
           <div class="card-image-wrap">
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop" alt="1 Kanal Residential Corner Plot" class="property-img" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop" alt="1 Kanal Residential Corner Plot" class="property-img" decoding="async" loading="lazy">
             <div class="badge-group">
               <span class="badge badge-sale">For Sale</span>
               <span class="badge badge-installments"><i class="fa-solid fa-calendar-check"></i> Installments Available</span>
@@ -450,7 +476,7 @@
         <!-- Hot Deal Card 3 -->
         <article class="property-card hot-deal-card" data-category="commercial" data-type="commercial" data-size="commercial-shop" data-location="main-bazaar" data-id="deal-3">
           <div class="card-image-wrap">
-            <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=800&auto=format&fit=crop" alt="Main Bazaar Commercial Shop" class="property-img" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=800&auto=format&fit=crop" alt="Main Bazaar Commercial Shop" class="property-img" decoding="async" loading="lazy">
             <div class="badge-group">
               <span class="badge badge-sale">For Sale</span>
               <span class="badge badge-urgent"><i class="fa-solid fa-bolt"></i> Urgent Sale</span>
@@ -517,7 +543,7 @@
           <article class="property-card" data-category="houses" data-type="buy" data-size="5-marla" data-location="civil-lines" data-price-lac="115" data-id="prop-1">
             <div class="card-image-wrap">
               <div class="card-image-clip">
-                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" alt="5 Marla Brand New House" class="property-img" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" alt="5 Marla Brand New House" class="property-img" decoding="async" loading="lazy">
               </div>
               <div class="badge-group">
                 <span class="badge badge-sale">FOR SALE</span>
@@ -554,7 +580,7 @@
           <article class="property-card" data-category="plots" data-type="plots" data-size="5-marla" data-location="housing-colony" data-price-lac="28.5" data-id="prop-2">
             <div class="card-image-wrap">
               <div class="card-image-clip">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop" alt="5 Marla Developed Residential Plot" class="property-img" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop" alt="5 Marla Developed Residential Plot" class="property-img" decoding="async" loading="lazy">
               </div>
               <div class="badge-group">
                 <span class="badge badge-sale">FOR SALE</span>
@@ -591,7 +617,7 @@
           <article class="property-card" data-category="commercial" data-type="commercial" data-size="commercial-plaza" data-location="railway-road" data-price-lac="165" data-id="prop-3">
             <div class="card-image-wrap">
               <div class="card-image-clip">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Commercial Plaza Floor" class="property-img" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Commercial Plaza Floor" class="property-img" decoding="async" loading="lazy">
               </div>
               <div class="badge-group">
                 <span class="badge badge-sale">FOR SALE</span>
@@ -628,7 +654,7 @@
           <article class="property-card" data-category="houses" data-type="rent" data-size="10-marla" data-location="civil-lines" data-price-lac="0.85" data-id="prop-4">
             <div class="card-image-wrap">
               <div class="card-image-clip">
-                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=800&auto=format&fit=crop" alt="10 Marla Luxury House For Rent" class="property-img" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=800&auto=format&fit=crop" alt="10 Marla Luxury House For Rent" class="property-img" decoding="async" loading="lazy">
               </div>
               <div class="badge-group">
                 <span class="badge badge-rent">FOR RENT</span>
@@ -665,7 +691,7 @@
           <article class="property-card" data-category="plots" data-type="plots" data-size="10-marla" data-location="sargodha-road" data-price-lac="54" data-id="prop-5">
             <div class="card-image-wrap">
               <div class="card-image-clip">
-                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop" alt="10 Marla Commercial-cum-Residential Plot" class="property-img" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop" alt="10 Marla Commercial-cum-Residential Plot" class="property-img" decoding="async" loading="lazy">
               </div>
               <div class="badge-group">
                 <span class="badge badge-sale">FOR SALE</span>
@@ -702,7 +728,7 @@
           <article class="property-card" data-category="commercial" data-type="rent" data-size="commercial-shop" data-location="mianwali-bypass" data-price-lac="0.45" data-id="prop-6">
             <div class="card-image-wrap">
               <div class="card-image-clip">
-                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop" alt="Main Road Commercial Shop" class="property-img" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop" alt="Main Road Commercial Shop" class="property-img" decoding="async" loading="lazy">
               </div>
               <div class="badge-group">
                 <span class="badge badge-rent">FOR RENT</span>
@@ -865,7 +891,7 @@
         <!-- Left Column: Framed Residence Photo + Floating 3D Glass Stat Card -->
         <div class="about-image-column">
           <div class="about-image-container">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" alt="Sunlit Luxury Pakistani Designer Residence in Quaidabad" class="about-main-image" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" alt="Sunlit Luxury Pakistani Designer Residence in Quaidabad" class="about-main-image" decoding="async" loading="lazy">
             <div class="about-stat-glass-card">
               <div class="about-stat-row">
                 <strong class="stat-highlight-gold">12+ Years of</strong>
@@ -1150,7 +1176,7 @@
             "Quaidabad Real Estate handled our 10 Marla villa purchase in <strong>Gulberg</strong> with complete <strong>transparency</strong>. Their registry and fard verification saved us from every hassle."
           </p>
           <div class="client-profile">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Dr. Tariq Mahmood" class="client-avatar" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Dr. Tariq Mahmood" class="client-avatar" decoding="async" loading="lazy">
             <div class="client-meta">
               <h4 class="client-name">Dr. Tariq Mahmood</h4>
               <span class="client-role">Homeowner, Gulberg Quaidabad</span>
@@ -1174,7 +1200,7 @@
             "Living in the UK, I was hesitant to invest back home. Their overseas desk verified the entire <strong>Patwarkhana</strong> record and delivered possession of my 1 Kanal corner plot right on time."
           </p>
           <div class="client-profile">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Engr. Kamran Siddiqui" class="client-avatar" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Engr. Kamran Siddiqui" class="client-avatar" decoding="async" loading="lazy">
             <div class="client-meta">
               <h4 class="client-name">Engr. Kamran Siddiqui</h4>
               <span class="client-role">Overseas Investor, Manchester UK</span>
@@ -1198,7 +1224,7 @@
             "We acquired a prime ground-floor commercial shop in Main Bazaar through them. Their rental yield <strong>projection</strong> was spot on and the transfer process was <strong>seamless</strong>."
           </p>
           <div class="client-profile">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" alt="Haji Muhammad Akram" class="client-avatar" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop" alt="Haji Muhammad Akram" class="client-avatar" decoding="async" loading="lazy">
             <div class="client-meta">
               <h4 class="client-name">Haji Muhammad Akram</h4>
               <span class="client-role">Business Owner, Main Bazaar</span>
@@ -1652,6 +1678,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20261127"></script>
 </body>
 </html>

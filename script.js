@@ -668,6 +668,127 @@ Please confirm the appointment slot.`);
     }
   });
 
+  // Hero 5-Slide Interactive Showcase
+  const heroSlides = [
+    {
+      eyebrow: 'MORE THAN PROPERTIES',
+      lineDark: 'Find a Place',
+      lineGold: 'to Call Home',
+      subheadline: 'Discover modern homes, premium locations and a lifestyle you deserve.',
+      ctaText: 'Explore Properties',
+      ctaHref: '#properties',
+      scrim: false
+    },
+    {
+      eyebrow: 'SIGNATURE RESIDENCES',
+      lineDark: 'Luxury Villas',
+      lineGold: 'Built to Last',
+      subheadline: "10 Marla & 1 Kanal Spanish-inspired designer homes in Quaidabad's finest blocks.",
+      ctaText: 'View Luxury Villas',
+      ctaHref: '#exclusive-portfolio',
+      scrim: true
+    },
+    {
+      eyebrow: '100% VERIFIED FARD & INTIQAL',
+      lineDark: 'Prime Plots',
+      lineGold: 'Clear Titles',
+      subheadline: 'Secure corner and boulevard plots on easy installments with full Patwarkhana verification.',
+      ctaText: 'Browse Plots',
+      ctaHref: '#properties',
+      scrim: true
+    },
+    {
+      eyebrow: 'HIGH-YIELD COMMERCIAL',
+      lineDark: 'Prime Plazas',
+      lineGold: 'Smart Returns',
+      subheadline: 'Main Bazaar shops and Railway Road office suites engineered for steady rental income.',
+      ctaText: 'Explore Commercial',
+      ctaHref: '#properties',
+      scrim: true
+    },
+    {
+      eyebrow: 'OVERSEAS & TURNKEY DESK',
+      lineDark: 'Dream Homes',
+      lineGold: 'Crafted End-to-End',
+      subheadline: 'From TMA map approval to turnkey finishing — trusted by local and overseas Pakistanis.',
+      ctaText: 'Our Services',
+      ctaHref: '#services',
+      scrim: true
+    }
+  ];
+
+  const heroBgEls = document.querySelectorAll('#heroBgSlides .hero-bg-slide');
+  const heroDots = document.querySelectorAll('.hero-dot');
+  const heroScrim = document.getElementById('heroBgScrim');
+  const heroContentBlock = document.getElementById('heroContentBlock');
+  const heroEyebrow = document.getElementById('heroEyebrow');
+  const heroLineDark = document.getElementById('heroLineDark');
+  const heroLineGold = document.getElementById('heroLineGold');
+  const heroSubheadline = document.getElementById('heroSubheadline');
+  const heroCtaBtn = document.getElementById('heroCtaBtn');
+  const heroCtaText = document.getElementById('heroCtaText');
+  let activeHeroIndex = 0;
+  let heroTimer = null;
+
+  function setHeroSlide(index) {
+    if (!heroBgEls.length) return;
+    activeHeroIndex = (index + heroSlides.length) % heroSlides.length;
+    const data = heroSlides[activeHeroIndex];
+
+    heroBgEls.forEach((el, i) => el.classList.toggle('active', i === activeHeroIndex));
+    heroDots.forEach((dot, i) => {
+      const isAct = i === activeHeroIndex;
+      dot.classList.toggle('active', isAct);
+      dot.setAttribute('aria-selected', String(isAct));
+    });
+    if (heroScrim) heroScrim.classList.toggle('visible', data.scrim);
+
+    if (heroContentBlock) {
+      heroContentBlock.classList.add('is-switching');
+      setTimeout(() => {
+        if (heroEyebrow) heroEyebrow.textContent = data.eyebrow;
+        if (heroLineDark) heroLineDark.textContent = data.lineDark;
+        if (heroLineGold) heroLineGold.textContent = data.lineGold;
+        if (heroSubheadline) heroSubheadline.textContent = data.subheadline;
+        if (heroCtaText) heroCtaText.textContent = data.ctaText;
+        if (heroCtaBtn) heroCtaBtn.setAttribute('href', data.ctaHref);
+        heroContentBlock.classList.remove('is-switching');
+      }, 140);
+    }
+  }
+
+  function startHeroAutoplay() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    stopHeroAutoplay();
+    heroTimer = setInterval(() => setHeroSlide(activeHeroIndex + 1), 5500);
+  }
+
+  function stopHeroAutoplay() {
+    if (heroTimer) {
+      clearInterval(heroTimer);
+      heroTimer = null;
+    }
+  }
+
+  heroDots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      setHeroSlide(parseInt(dot.dataset.slide, 10));
+      startHeroAutoplay();
+    });
+  });
+
+  document.getElementById('heroPrevBtn')?.addEventListener('click', () => {
+    setHeroSlide(activeHeroIndex - 1);
+    startHeroAutoplay();
+  });
+
+  document.getElementById('heroNextBtn')?.addEventListener('click', () => {
+    setHeroSlide(activeHeroIndex + 1);
+    startHeroAutoplay();
+  });
+
+  startHeroAutoplay();
+
   // Interactive FAQ Accordion
   const faqTriggers = document.querySelectorAll('#faqAccordion .faq-trigger');
   faqTriggers.forEach((trigger) => {
